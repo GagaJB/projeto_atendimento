@@ -5,9 +5,9 @@ class VetorNaoOrdenado:
     def inserir(self, elemento):
         self.elementos.append(elemento)
 
-    def buscar(self, id_cliente):
+    def buscar(self, id_alvo):
         for el in self.elementos:
-            if el.id_cliente == id_cliente:
+            if getattr(el, 'id_cliente', None) == id_alvo or getattr(el, 'id_atendente', None) == id_alvo:
                 return el
         return None
 
